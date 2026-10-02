@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>about me | ek9no's Page</title>
+  <meta name="description" content="thoughts about web development &amp; life">
+  <meta name="author" content="ek9no">
+
+  <!-- Theme init (runs before paint to avoid a flash) -->
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem('theme') ||
+      (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  </script>
+
+  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="blog-extra.css">
+</head>
+
+<body class="home-page">
+  <div class="page">
+
+    <header class="hero">
+      <div class="site-title">✧ EK9NO'S PAGE ✧</div>
+      <nav>
+        <a href="index.html">home</a>
+        <a href="about-me.html">about me</a>
+        <a href="blog.html">blog</a>
+      </nav>
+
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </header>
+
+    <main>
+      <div class="blog-wrap">
+        <article class="panel">
+          <h2>About Me</h2>
+          <p class="post-date">2026-10-02</p>
+
+          <div class="post-content">
+            <p>Hi there! I'm ek9no, a self-learner and psychology enthusiast. This is my little corner of the internet, where I share my thoughts and experiences, especially about the current world of technology.</p>
+
+            <h3>Things I love to share</h3>
+            <p>I love to share my thoughts on psychology, personal development, and the intersection of technology and human behavior.</p>
+
+            <h3>Why I made this website</h3>
+            <p>Many people look for <code>ENTERTAINMENT</code> rather than knowledge, especially on YouTube, where you can find all kinds of free education.</p>
+            <p>I made this website to share the things I think are important. You may need to push yourself to read them, because the <code>attention span</code> of many young and older people is really low. That is exactly why I made this place.</p>
+
+            <blockquote>
+              <p>I am here to bring importance to your life and to your mind.</p>
+            </blockquote>
+
+            <p>Thanks for reading.</p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="pagefoot">
+      <a href="https://github.com/kekobade" target="_blank" rel="noopener noreferrer">github</a>
+      &nbsp;·&nbsp;
+      <a href="https://x.com/kekowashere" target="_blank" rel="noopener noreferrer">x</a>
+    </footer>
+
+  </div>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    function applyTheme(t) {
+      html.dataset.theme = t;
+      localStorage.setItem('theme', t);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const next = html.dataset.theme === 'light' ? 'dark' : 'light';
+      if (document.startViewTransition) {
+        document.startViewTransition(() => applyTheme(next));
+      } else {
+        applyTheme(next);
+      }
+    });
+  </script>
+</body>
+</html>
