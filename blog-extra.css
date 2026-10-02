@@ -1,7 +1,7 @@
 /* Blog pages: uses the same tokens as style2.css, so colors always match */
 
 .blog-wrap { width: 100%; max-width: 920px; }
-
+ 
 .back { display: inline-block; margin-bottom: 18px; font-size: 13px; color: var(--text-dim); border: none; }
 .back:hover { color: var(--link-hover); }
 
