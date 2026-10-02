@@ -2,14 +2,12 @@
 
 /* ==========================================================
    TOKENS
-   Fonts, sizes and spacing are NOT theme-dependent, so the
-   layout is pixel-identical in both modes. Only colors change.
    ========================================================== */
 :root {
     /* type + motion (shared) */
     --font-display: 'Press Start 2P', ui-monospace, monospace;
     --font-body: 'Space Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-    --transition: 0.2s ease;
+    --transition: 0.5s ease;
 
     /* DARK (default) */
     color-scheme: dark;
@@ -29,6 +27,31 @@
     --offline: #e06565;
     --selection: rgba(143, 211, 255, 0.28);
 }
+
+/* ==========================================================
+   CENTERED WELCOME PANEL
+   ========================================================== */
+.page {
+    min-height: 100vh;
+    grid-template-columns: minmax(0, 1fr);   /* single column, no empty sidebar space */
+    grid-template-rows: auto 1fr;            /* header on top, main fills the rest */
+}
+
+main {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;       /* vertical center */
+    justify-content: center;   /* horizontal center */
+}
+
+.welcome-blurb {
+    width: 100%;
+    max-width: 640px;
+    margin-bottom: 0;
+    text-align: center;
+}
+.welcome-blurb h2 { justify-content: center; }
+.welcome-blurb p { margin-left: auto; margin-right: auto; }
 
 /* LIGHT: the same blue-indigo family as dark, flipped to daytime */
 html[data-theme="light"] {
@@ -125,6 +148,29 @@ header.hero .site-title {
 header.hero nav { font-size: 13px; color: var(--text-dim); }
 header.hero nav a { margin: 0 8px; border: none; }
 header.hero nav a:hover { text-decoration: underline; }
+
+/* ==========================================================
+   WELCOME PANEL: centered horizontally, right below the header
+   ========================================================== */
+.page {
+    grid-template-columns: minmax(0, 1fr);   /* single column */
+    grid-template-rows: auto auto;           /* header, then main, no stretching */
+    align-content: start;                    /* keep everything at the top */
+}
+
+main {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;     /* horizontal center only */
+    align-items: flex-start;     /* sits at the top, next to the header */
+    padding-top: 10px;
+}
+
+.welcome-blurb {
+    width: 100%;
+    max-width: 920px;            /* same width as your header/page container */
+    margin-bottom: 0;
+}
 
 /* ==========================================================
    PANELS
@@ -314,4 +360,9 @@ html:not([data-theme="light"]) .sun-icon { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+}
+
+
+body {
+    transition: background 0.4s ease, color 0.4s ease;
 }
