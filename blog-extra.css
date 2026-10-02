@@ -1,0 +1,50 @@
+/* Blog pages: uses the same tokens as style2.css, so colors always match */
+
+.blog-wrap { width: 100%; max-width: 920px; }
+
+.back { display: inline-block; margin-bottom: 18px; font-size: 13px; color: var(--text-dim); border: none; }
+.back:hover { color: var(--link-hover); }
+
+/* Blog list */
+.blog-intro { color: var(--text-dim); font-size: 13px; margin-bottom: 8px; }
+ul.bloglist a { color: var(--text); border: none; }
+ul.bloglist a:hover { color: var(--link-hover); }
+
+/* Single post */
+.post-date { font-size: 12px; color: var(--text-dim); margin-bottom: 20px; }
+.post-content p { margin-bottom: 14px; max-width: 68ch; }
+.post-content h3 {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--heading);
+    margin: 28px 0 12px;
+}
+.post-content ul { margin: 0 0 14px 20px; }
+.post-content li { margin-bottom: 6px; }
+.post-content code {
+    background: var(--bg-alt);
+    border: 1px solid var(--panel-border);
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 0.9em;
+}
+.post-content pre {
+    background: var(--bg-alt);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    overflow-x: auto;
+}
+.post-content pre code { background: none; border: none; padding: 0; }
+.post-content blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    margin: 20px 0;
+    color: var(--text-dim);
+    font-style: italic;
+}
+.post-content img { max-width: 100%; height: auto; border: 1px solid var(--panel-border); border-radius: 6px; margin: 18px 0; }
+.post-content hr { border: none; border-top: 1px dashed var(--panel-border); margin: 28px 0; }
